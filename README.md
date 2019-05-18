@@ -14,7 +14,7 @@ This project aims at providing a re-implement of bisenet by using tensorflow.
   
 # Train
   You can simply run train.py by default hyper-parameter, or modify the hyper-parameter in configuration.py by yourself.
-* Tensorboard Result
+### Tensorboard Result
   
 # Test and Predict
 *  If you have train this model by yourself, you can simply run test.py, and then view the result by using tensorboard. And you can predict one picture that have spcified in the example dir by simply run predict.py, then the predict will be saved in the example dir too.
