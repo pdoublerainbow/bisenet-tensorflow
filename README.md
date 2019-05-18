@@ -11,7 +11,7 @@ This project aims at providing a re-implement of bisenet by using tensorflow.
 * pip install opencv-python  
   
 #Optional: Install nvidia-ml-py for automatically selecting GPU
-* pip install nvidia-ml-py
+* #pip install nvidia-ml-py
   
 # Train
   You can simply run train.py by default hyper-parameter, or modify the hyper-parameter in configuration.py by yourself.
