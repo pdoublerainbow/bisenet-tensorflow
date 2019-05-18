@@ -22,7 +22,7 @@ This project aims at providing a re-implement of bisenet by using tensorflow.
 *  If you just want to test and predict this model trained by me. You should do things follows:
 1. cd bisenet-tensorflow
 2. mkdir -p Logs/bisenet/checkpoints/bisenet-v2
-3. download the model i have trained in this link
+3. download the model in this link and realse them in the dir that have mentioned
 4. then you can run test.py or predict.py
 
 # Citation
@@ -36,3 +36,8 @@ Please consider citing the BiSeNet in your publications if it helps your researc
   year={2018},
   organization={Springer}
 }
+
+# Reference
+* https://github.com/ycszen/TorchSeg
+* https://github.com/GeorgeSeif/Semantic-Segmentation-Suite
+* https://arxiv.org/abs/1808.00897
