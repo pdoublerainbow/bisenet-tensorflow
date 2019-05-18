@@ -19,7 +19,7 @@ This project aims at providing a re-implement of bisenet by using tensorflow.
   
 # Test and Predict
 *  If you have train this model by yourself, you can simply run test.py, and then view the result by using tensorboard. And you can predict one picture that have spcified in the example dir by simply run predict.py, then the predict will be saved in the example dir too.
-*  If you just want to test and predict this model trained by me. You should do things follows:
+*  If you just want to test and predict this model trained by me. You should do things as follow:
 1. cd bisenet-tensorflow
 2. mkdir -p Logs/bisenet/checkpoints/bisenet-v2
 3. download the model in this link and realse them in the dir that have mentioned
