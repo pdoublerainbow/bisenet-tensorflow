@@ -9,7 +9,7 @@ This project aims at providing a re-implement of bisenet by using tensorflow.
 * pip install tensorflow-gpu==1.5.0
 * pip install sacred
 * pip install opencv-python
-* # Optional: Install nvidia-ml-py for automatically selecting GPU
+* #Optional: Install nvidia-ml-py for automatically selecting GPU
 * pip install nvidia-ml-py
   
 # Train
