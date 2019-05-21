@@ -22,7 +22,7 @@ This project aims at providing a re-implement of bisenet by using tensorflow.
 *  If you just want to test and predict this model trained by me. You should do things as follow:
 1. cd bisenet-tensorflow
 2. mkdir -p Logs/bisenet/checkpoints/bisenet-v2
-3. download the model in this link <will update soon> and realse them in the dir that have mentioned
+3. download the model in this link （will update soon） and realse them in the dir that have mentioned
 4. then you can run test.py or predict.py
 
 # Citation
