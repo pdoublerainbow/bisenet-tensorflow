@@ -68,7 +68,7 @@ TRAIN_CONFIG = {
                              'output_dir': 'val_labels',
                              'crop_h': 736,
                              'crop_w': 960,
-                             'batch_size': 1,
+                             'batch_size': 2,
                              'prefetch_threads': 4, },
 
   'test_data_config': {'preprocessing_name': 'None',
