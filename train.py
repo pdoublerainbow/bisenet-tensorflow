@@ -62,7 +62,7 @@ def _configure_learning_rate(train_config, global_step):
                                       decay_rate=lr_config['lr_decay_factor'],
                                       staircase=lr_config['staircase'])
   elif lr_policy == 'polynomial':
-    T_total = int(num_batches_per_epoch) * train_config['train_data_config']['epoch']
+    T_total = （int(num_batches_per_epoch)+1） * train_config['train_data_config']['epoch']
     return lr_config['initial_lr'] * (1 - tf.to_float(global_step)/T_total)**lr_config['power']
   elif lr_policy == 'cosine':
     T_total = train_config['train_data_config']['epoch'] * num_batches_per_epoch
