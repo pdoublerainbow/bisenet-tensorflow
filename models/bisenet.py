@@ -136,17 +136,6 @@ class BiseNet(object):
                 dataset = DataLoader(self.data_config, self.train_config['DataSet'], self.train_config['class_dict'])
                 self.images, labels = dataset.get_one_batch()
                 self.labels = tf.one_hot(labels, self.num_classes)
-                # # TODO: debug, Don't froget to delete
-                # with tf.Session() as sess:
-                #     global_variables_init_op = tf.global_variables_initializer()
-                #     local_variables_init_op = tf.local_variables_initializer()
-                #     sess.run(global_variables_init_op)
-                #     sess.run(local_variables_init_op)
-                #     a = sess.run(self.labels)
-                #     print((a==2).any())
-                #     print(a.max())
-                #     print(a.min())
-                #     print(a)
 
         else:
             self.images_feed = tf.placeholder(shape=[None, None, None, 3],
@@ -230,9 +219,17 @@ class BiseNet(object):
                     net_5 = ConvBlock(net_5, n_filters=128, kernel_size=[3, 3])
                     net_4 = ConvBlock(net_4, n_filters=128, kernel_size=[3, 3])
                     net = ConvBlock(net, n_filters=64, kernel_size=[3, 3])
+                    
+                    # Upsampling + dilation or only Upsampling
+                    net = Upsampling(net, scale=2)
+                    net = slim.conv2d(net, 64, [3, 3], rate=2, activation_fn=tf.nn.relu, biases_initializer=None,
+                                      normalizer_fn=slim.batch_norm)
 
                     net = slim.conv2d(net, self.num_classes, [1, 1], activation_fn=None, scope='logits')
-                    self.net = Upsampling(net, scale=8)
+                    self.net = Upsampling(net, 4)
+
+                    # net = slim.conv2d(net, self.num_classes, [1, 1], activation_fn=None, scope='logits')
+                    # self.net = Upsampling(net, scale=8)
 
                     if self.mode in ['train', 'validation', 'test']:
                         sup1 = slim.conv2d(net_5, self.num_classes, [1, 1], activation_fn=None, scope='supl1')
