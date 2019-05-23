@@ -127,7 +127,7 @@ class BiseNet(object):
 
         Outputs:
           self.images: image batch of shape [batch, hz, wz, 3]
-          labels: image batch of shape [batch, hx, wx, 1]
+          labels: image batch of shape [batch, hx, wx, num_classes]
         """
         if self.mode in ['train', 'validation', 'test']:
             # Put data loading and preprocessing in CPU is substantially faster
