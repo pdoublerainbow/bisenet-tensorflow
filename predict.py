@@ -84,7 +84,10 @@ if __name__ == '__main__':
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         img = cv2.resize(img, (infer_size[1], infer_size[0]))
         img = img[np.newaxis, :]
-
+        
+        # Make the mechine hot
+        _ = sess.run(response, feed_dict={model.images_feed: img})
+        _ = sess.run(response, feed_dict={model.images_feed: img})
         elapse = []
         for i in range(50):
             start = time.time()
