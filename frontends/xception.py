@@ -117,5 +117,6 @@ def xception_arg_scope(weight_decay=0.00001,
         # Set parameters for batch_norm. Note: Do not set activation function as it's preset to None already.
         with slim.arg_scope([slim.batch_norm],
                             decay=batch_norm_decay,
-                            epsilon=batch_norm_epsilon) as scope:
+                            epsilon=batch_norm_epsilon,
+                            scale=True) as scope:
             return scope
