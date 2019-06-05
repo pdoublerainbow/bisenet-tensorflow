@@ -93,7 +93,7 @@ def _parse_function(image_filename, label_filename, img_mean, class_dict):
     # Decode image & label
     img = tf.image.decode_png(img_contents, channels=3)
     img = tf.image.convert_image_dtype(img, dtype=tf.float32)
-    if img_mean:
+    if img_mean is not None:
         img -= img_mean/255
 
     label = tf.image.decode_png(label_contents, channels=3)
